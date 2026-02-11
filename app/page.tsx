@@ -19,16 +19,16 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="h-screen min-h-[800px] flex flex-col justify-center text-center relative overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
+            className="absolute inset-0 bg-cover bg-center opacity-30 scale-105"
             style={{ backgroundImage: "url('/BackG.webp')" }}
           />
           <div className="relative z-10 p-4 flex flex-col items-center justify-center flex-grow space-y-12">
-            <div className="flex flex-col items-center space-y-4">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-mask">
-                Panoramic
+            <div className="flex flex-col items-center space-y-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-mask max-w-5xl leading-none">
+                Where luxury meets the horizon
               </h1>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
-                Where Luxury Meets the Horizon. Indulge in an experience of a lifetime.
+              <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed font-light">
+                Experience a luxury hotel stay designed for comfort, elegance, and unforgettable views. Panoramic Hotel offers premium rooms, world-class amenities, and breathtaking city skyline views, making it the perfect choice for business travelers, couples, and family vacations.
               </p>
             </div>
             <BookingForm />
@@ -36,21 +36,31 @@ export default function HomePage() {
         </section>
 
         {/* Exquisite Services Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-mask">Exquisite Services</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-gray-400">Crafted for your comfort, designed for your delight.</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-5xl mx-auto">
+        <section className="py-24 md:py-32 relative">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-mask/5 blur-3xl rounded-full -translate-y-1/2 md:translate-x-1/4" />
+          <div className="container mx-auto text-center px-4 relative z-10">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-mask mb-6">Exquisite Hotel Services & Amenities</h2>
+            <p className="max-w-3xl mx-auto text-gray-400 text-lg">
+              Crafted for your comfort, designed for your delight. We offer premium facilities to ensure your stay is seamless and enjoyable.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-20 max-w-7xl mx-auto">
               {services.map((service, index) => (
-                <div key={index} className="flex flex-col items-center gap-4 group">
-                  <div className="overflow-hidden rounded-lg w-full aspect-square border border-gray-800 group-hover:border-white/20 transition-all duration-300">
+                <div key={index} className="flex flex-col items-center gap-6 group p-6 bg-gray-950/80 rounded-2xl border border-white/5 hover:border-mask/30 transition-all duration-500 hover:-translate-y-2 h-full">
+                  <div className="overflow-hidden rounded-xl w-full aspect-square border border-white/5 group-hover:border-mask/20 transition-all duration-300 relative shadow-2xl">
                     <img
                       src={service.image || "/placeholder.svg"}
                       alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  <span className="text-sm font-medium text-gray-300">{service.name}</span>
+                  <div className="space-y-3 text-center flex-1 flex flex-col items-center justify-center">
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-mask group-hover:text-white transition-colors duration-300 leading-relaxed">
+                      {service.name}
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed font-medium">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -58,17 +68,16 @@ export default function HomePage() {
         </section>
 
         {/* Personalized Service Section */}
-        <section className="py-20 md:py-32 bg-gray-950">
-          <div className="container mx-auto">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Personalized Service</h2>
-              <p className="mt-4 text-gray-400">
-                At The Panoramic, our dedication to personalized service makes us unique. Enjoy hospitality that
-                anticipates your needs, with express check-ins, concierge assistance, and a dedicated team ensuring your
-                stay is smooth and tailored to your preferences.
+        <section className="py-24 md:py-32 bg-gray-950 relative overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-mask/5 blur-3xl rounded-full" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white">Personalized Hotel Services</h2>
+              <p className="text-gray-400 text-lg leading-relaxed font-light">
+                At The Panoramic, we specialize in personalized hotel services that elevate your stay. Our commitment to guest satisfaction includes 24/7 front desk support, professional room service, and thoughtfully curated experiences. Whether you are visiting for business or leisure, our luxury hotel services are designed to ensure comfort, efficiency, and a truly memorable stay.
               </p>
             </div>
-            <div className="mt-16">
+            <div className="">
               <PersonalizedServiceSlider />
             </div>
           </div>

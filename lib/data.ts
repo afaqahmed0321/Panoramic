@@ -1,32 +1,50 @@
 import { AirVent, Bath, BedDouble, Tv, UtensilsCrossed, Wifi } from "lucide-react"
 
-export const services: { image: string; name: string }[] = [
-  { image: "/ElecricityBackup.webp", name: "24/7 Electricity Backup" },
-  { image: "/cctv.jpeg", name: "CCTV Cameras in all common areas" },
-  { image: "/security.jpeg", name: "24/7 Security" },
-  { image: "/rooftop.avif", name: "Rooftop" },
-  { image: "/restaurant.jpg", name: "Restaurant" },
-  { image: "/food.webp", name: "Hygienic Food" },
-  { image: "/parking.jpg", name: "Parking (Rs 200/day)" },
+export const services = [
+  { 
+    image: "/ElecricityBackup.webp", 
+    name: "24/7 Electricity Backup",
+    description: "Enjoy uninterrupted comfort with our 24/7 electricity backup, ensuring a smooth and hassle-free stay."
+  },
+  { 
+    image: "/cctv.jpeg", 
+    name: "CCTV Cameras in All Common Areas",
+    description: "Our property is fully secured with CCTV cameras in all common areas, offering enhanced safety and peace of mind."
+  },
+  { 
+    image: "/security.jpeg", 
+    name: "24/7 Security",
+    description: "We provide 24/7 hotel security services with trained staff monitoring the premises at all times."
+  },
+  { 
+    image: "/food.webp", 
+    name: "Hygienic Food",
+    description: "We prioritize health and quality by serving fresh and hygienic food, prepared under strict cleanliness standards."
+  },
+  { 
+    image: "/parking.jpg", 
+    name: "Parking Facility",
+    description: "Our hotel offers a secure parking facility for guests, providing convenience and ease for those traveling by car."
+  },
 ]
 
 export const personalizedServices = [
   {
     title: "Reception",
     description:
-      "24/7 front desk assistance for check-ins, check-outs, inquiries, and guest support.",
+      "Our 24/7 hotel reception service provides seamless check-ins, express check-outs, and continuous guest assistance.",
     image: "/reception.jpg",
   },
   {
     title: "Room Services",
     description:
-      "Comfort delivered to your door: meals, amenities, and personalized assistance at any time.",
+      "Enjoy convenient hotel room service delivering meals, amenities, and personalized assistance directly to your room.",
     image: "/roomservice.jpeg",
   },
   {
     title: "Buffet Breakfast",
     description:
-      "Start your day with a delicious buffet breakfast featuring fresh and hygienic options.",
+      "Start your day with a wholesome buffet breakfast at our luxury hotel, featuring fresh, hygienic, and carefully prepared options.",
     image: "/breakfas.jpg",
   },
 ]

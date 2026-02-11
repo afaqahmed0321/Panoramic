@@ -4,6 +4,16 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Luxury Rooms at Panoramic Hotel Lahore | Premium Stay on Mall Road",
+  description: "Explore luxury rooms at Panoramic Hotel Lahore featuring modern interiors, panoramic city views, premium comfort, and world-class facilities.",
+  keywords: ["Panoramic Hotel rooms", "luxury rooms Lahore", "Mall Road hotel rooms"],
+  alternates: {
+    canonical: "https://www.panoramichotel.co/rooms",
+  },
+}
 
 export default function RoomsPage() {
   return (

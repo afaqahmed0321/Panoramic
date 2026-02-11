@@ -4,6 +4,16 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Panoramic Hotel Lahore | Hotel on Mall Road",
+  description: "Contact Panoramic Hotel Lahore at S-19 Shahrah e Quaid e Azam, Mall Road, Lahore for bookings, inquiries, and luxury stay reservations.",
+  keywords: ["contact Panoramic Hotel Lahore", "hotel booking Lahore", "Mall Road hotel contact"],
+  alternates: {
+    canonical: "https://www.panoramichotel.co/contact",
+  },
+}
 
 export default function ContactPage() {
   return (

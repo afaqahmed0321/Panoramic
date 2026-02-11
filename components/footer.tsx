@@ -122,7 +122,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Panoramic Hotel Lahore. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] uppercase tracking-widest text-gray-500">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
         </div>

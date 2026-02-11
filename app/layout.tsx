@@ -15,11 +15,23 @@ const fontSerif = Playfair_Display({
   weight: "700",
 })
 
+import Script from "next/script"
+
 export const metadata: Metadata = {
-  title: "Panoramic Hotel | Luxury & Comfort",
+  title: "Panoramic Hotel Lahore | Luxury Hotel on Mall Road, Lahore Pakistan",
   description:
-    "Experience unparalleled luxury and comfort at Panoramic Hotel. Book your stay with us for an unforgettable experience.",
-    generator: 'v0.dev'
+    "Panoramic Hotel Lahore is a luxury hotel located on Mall Road, Lahore offering premium rooms, panoramic city views, modern amenities, and exceptional hospitality. Book your stay today.",
+  keywords: ["Panoramic Hotel Lahore", "luxury hotel in Lahore", "Mall Road hotel Lahore", "best hotel in Lahore Pakistan", "panoramic view hotel Lahore"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    google: "1oCMz6gkAfebslLPvxiMdp_UUAXqWKGsKSlZq0l1wmE",
+  },
+  alternates: {
+    canonical: "https://www.panoramichotel.co/",
+  },
 }
 
 export default function RootLayout({
@@ -29,6 +41,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-1D4XT0SDDE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1D4XT0SDDE');
+          `}
+        </Script>
+      </head>
       <body
         className={cn("min-h-screen bg-black font-sans text-white antialiased", fontSans.variable, fontSerif.variable)}
       >

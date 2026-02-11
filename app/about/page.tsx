@@ -1,6 +1,16 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Panoramic Hotel Lahore | Luxury Hotel on Mall Road",
+  description: "Learn about Panoramic Hotel Lahore, a luxury hotel on Mall Road offering premium accommodation, panoramic views, and exceptional hospitality in the heart of Lahore.",
+  keywords: ["about Panoramic Hotel Lahore", "luxury hotel Lahore", "Mall Road hotel Pakistan"],
+  alternates: {
+    canonical: "https://www.panoramichotel.co/about",
+  },
+}
 
 export default function AboutPage() {
   return (
