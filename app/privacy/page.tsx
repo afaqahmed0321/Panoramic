@@ -1,5 +1,15 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Panoramic Hotel Lahore Pakistan",
+  description: "Read the privacy policy of Panoramic Hotel Lahore to understand how we collect, use, and protect customer information securely.",
+  keywords: ["Panoramic Hotel privacy policy", "hotel privacy policy Lahore"],
+  alternates: {
+    canonical: "https://www.panoramichotel.co/privacy-policy",
+  },
+}
 
 export default function PrivacyPage() {
   return (
