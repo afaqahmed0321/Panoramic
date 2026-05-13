@@ -6,14 +6,37 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "Luxury Rooms at Panoramic Hotel Lahore | Premium Stay on Mall Road",
-  description: "Explore luxury rooms at Panoramic Hotel Lahore featuring modern interiors, panoramic city views, premium comfort, and world-class facilities.",
-  keywords: ["Panoramic Hotel rooms", "luxury rooms Lahore", "Mall Road hotel rooms"],
-  alternates: {
-    canonical: "https://www.panoramichotel.co/rooms",
+  title: "Panoramic Hotel Lahore | Best Hotel on Mall Road Lahore",
+
+  description:
+    "Stay at Panoramic Hotel Lahore on Mall Road. Luxury rooms, family environment, free WiFi, restaurant, parking & easy access to Lahore attractions. Book your stay today.",
+
+  keywords: [
+    "Panoramic Hotel Lahore",
+    "hotel in Lahore",
+    "Mall Road Lahore hotel",
+    "best hotel in Lahore",
+    "luxury hotel Lahore",
+    "family hotel Lahore",
+    "business hotel Lahore",
+    "Lahore accommodation",
+    "hotel near Mall Road Lahore",
+    "affordable hotel Lahore",
+    "hotel booking Lahore"
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
   },
-}
+
+  alternates: {
+    canonical: "https://www.panoramichotel.co/",
+  },
+};
 
 export default function RoomsPage() {
   return (
