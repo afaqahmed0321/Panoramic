@@ -19,7 +19,7 @@ export function TestimonialSlider() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="bg-gray-950 border-gray-800 text-center h-full">
+                <Card className="bg-gray-50 border-gray-200 text-center h-full">
                   <CardContent className="p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full">
                     <div>
                       <div className="flex justify-center mb-3 sm:mb-4">
@@ -27,11 +27,11 @@ export function TestimonialSlider() {
                           <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-mask" fill="url(#gold-gradient)" />
                         ))}
                       </div>
-                      <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
+                      <p className="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
                         &quot;{testimonial.review}&quot;
                       </p>
                     </div>
-                    <p className="font-semibold text-white text-sm sm:text-base mt-auto">
+                    <p className="font-semibold text-black text-sm sm:text-base mt-auto">
                       {testimonial.name}
                     </p>
                   </CardContent>
@@ -40,8 +40,8 @@ export function TestimonialSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex ml-8 sm:ml-12 md:ml-14 bg-black/50 border-gray-700 hover:bg-gray-800 -left-4 sm:-left-6 md:-left-8" />
-        <CarouselNext className="hidden sm:flex mr-8 sm:mr-12 md:mr-14 bg-black/50 border-gray-700 hover:bg-gray-800 -right-4 sm:-right-6 md:-right-8" />
+        <CarouselPrevious className="hidden sm:flex ml-8 sm:ml-12 md:ml-14 bg-white/90 border-gray-300 hover:bg-gray-100 -left-4 sm:-left-6 md:-left-8" />
+        <CarouselNext className="hidden sm:flex mr-8 sm:mr-12 md:mr-14 bg-white/90 border-gray-300 hover:bg-gray-100 -right-4 sm:-right-6 md:-right-8" />
         <svg width="0" height="0">
           <defs>
             <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">

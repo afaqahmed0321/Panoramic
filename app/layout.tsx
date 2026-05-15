@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -58,9 +59,10 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={cn("min-h-screen bg-black font-sans text-white antialiased", fontSans.variable, fontSerif.variable)}
+        className={cn("min-h-screen bg-white font-sans text-black antialiased", fontSans.variable, fontSerif.variable)}
       >
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   )

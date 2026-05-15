@@ -19,7 +19,7 @@ export function PersonalizedServiceSlider() {
           {personalizedServices.map((service, index) => (
             <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="bg-transparent border-gray-800 h-full flex flex-col">
+                <Card className="bg-transparent border-gray-200 h-full flex flex-col">
                   <CardHeader className="p-0">
                     <div className="aspect-video overflow-hidden rounded-t-lg">
                       <img
@@ -30,11 +30,11 @@ export function PersonalizedServiceSlider() {
                     </div>
                   </CardHeader>
                   <CardContent className="p-4 sm:p-6 flex-1">
-                    <CardTitle className="font-serif text-xl sm:text-2xl text-white">{service.title}</CardTitle>
-                    <CardDescription className="mt-3 text-gray-400 text-sm sm:text-base">{service.description}</CardDescription>
+                    <CardTitle className="font-serif text-xl sm:text-2xl text-black">{service.title}</CardTitle>
+                    <CardDescription className="mt-3 text-gray-600 text-sm sm:text-base">{service.description}</CardDescription>
                   </CardContent>
                   <CardFooter className="p-4 sm:p-6 pt-0">
-                    <Button variant="link" className="p-0 text-gray-300 hover:text-white text-sm sm:text-base">
+                    <Button variant="link" className="p-0 text-gray-700 hover:text-black text-sm sm:text-base">
                       Read More
                     </Button>
                   </CardFooter>
@@ -43,8 +43,8 @@ export function PersonalizedServiceSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex bg-black/50 border-gray-700 hover:bg-gray-800 -left-4 sm:-left-6 md:-left-8" />
-        <CarouselNext className="hidden sm:flex bg-black/50 border-gray-700 hover:bg-gray-800 -right-4 sm:-right-6 md:-right-8" />
+        <CarouselPrevious className="hidden sm:flex bg-white/90 border-gray-300 hover:bg-gray-100 -left-4 sm:-left-6 md:-left-8" />
+        <CarouselNext className="hidden sm:flex bg-white/90 border-gray-300 hover:bg-gray-100 -right-4 sm:-right-6 md:-left-8" />
       </Carousel>
     </div>
   )

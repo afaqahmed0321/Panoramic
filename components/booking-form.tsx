@@ -32,7 +32,7 @@ export function BookingForm() {
   return (
     <div className="bg-white text-black p-6 rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-4 items-end w-full max-w-5xl">
       <div className="grid gap-1.5">
-        <Label htmlFor="check-in" className="text-sm font-medium text-gray-600">
+        <Label htmlFor="check-in" className="text-sm font-medium text-gray-600 text-left">
           Check-In Date
         </Label>
         <Popover>
@@ -49,13 +49,13 @@ export function BookingForm() {
               {date?.from ? format(date.from, "LLL dd, y") : <span>Select date</span>}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto p-0 bg-gray-900 border-gray-700" align="start">
+          <PopoverContent className="w-auto p-0 bg-white border-gray-200" align="start">
             <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} />
           </PopoverContent>
         </Popover>
       </div>
       <div className="grid gap-1.5">
-        <Label htmlFor="check-out" className="text-sm font-medium text-gray-600">
+        <Label htmlFor="check-out" className="text-sm font-medium text-gray-600 text-left">
           Check-Out Date
         </Label>
         <Popover>
@@ -73,13 +73,13 @@ export function BookingForm() {
               {date?.to ? format(date.to, "LLL dd, y") : <span>Select date</span>}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto p-0 bg-gray-900 border-gray-700" align="start">
+          <PopoverContent className="w-auto p-0 bg-white border-gray-200" align="start">
             <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} />
           </PopoverContent>
         </Popover>
       </div>
       <div className="grid gap-1.5">
-        <Label className="text-sm font-medium text-gray-600">Guests</Label>
+        <Label className="text-sm font-medium text-gray-600 text-left">Guests</Label>
         <Popover>
           <PopoverTrigger asChild>
             <Button

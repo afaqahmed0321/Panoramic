@@ -20,7 +20,7 @@
 
 @layer base {
   :root {
-    --background: 40 10% 100%;
+    --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -79,25 +79,25 @@
     overflow-x: hidden;
   }
 
-  /* Custom Calendar Styles for Dark Theme */
+  /* Custom Calendar Styles for Light Theme */
   .rdp-day_selected,
   .rdp-day_selected:focus-visible,
   .rdp-day_selected:hover {
-    @apply bg-mask text-black font-bold;
+    @apply bg-mask text-white font-bold;
   }
   .rdp-day_today {
-    @apply text-mask font-bold border-white/50;
+    @apply text-mask font-bold border-gray-300;
   }
   .rdp-day:hover {
-    @apply bg-gray-800 rounded-md;
+    @apply bg-gray-100 rounded-md;
   }
   .rdp-head_cell {
-    @apply text-gray-400;
+    @apply text-gray-600;
   }
   .rdp-nav_button {
-    @apply text-white hover:bg-gray-800;
+    @apply text-black hover:bg-gray-100;
   }
   .rdp-day_outside {
-    @apply text-gray-600;
+    @apply text-gray-400;
   }
 }

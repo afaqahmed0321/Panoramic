@@ -12,7 +12,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="aspect-video overflow-hidden rounded-lg border border-gray-800">
+      <div className="aspect-video overflow-hidden rounded-lg border border-gray-200">
         <img src={mainImage || "/placeholder.svg"} alt="Main room view" className="w-full h-full object-cover" />
       </div>
       <div className="grid grid-cols-4 gap-4">
@@ -22,7 +22,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             onClick={() => setMainImage(image)}
             className={cn(
               "aspect-square overflow-hidden rounded-md border-2 transition-all",
-              mainImage === image ? "border-white" : "border-gray-800 hover:border-gray-500",
+              mainImage === image ? "border-black" : "border-gray-200 hover:border-gray-400",
             )}
           >
             <img

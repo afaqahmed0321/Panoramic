@@ -36,22 +36,22 @@ export default function TermsPage() {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
       <main className="flex-1 pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-mask">Terms & Conditions</h1>
-            <p className="text-gray-400 mb-12">By accessing and using the Panoramic Hotel – Mall Road Lahore website, you agree to comply with the following terms and conditions. These terms apply to all guests who book or stay at our hotel in Lahore.</p>
-            
+            <p className="text-gray-600 mb-12">By accessing and using the Panoramic Hotel – Mall Road Lahore website, you agree to comply with the following terms and conditions. These terms apply to all guests who book or stay at our hotel in Lahore.</p>
+
             <div className="grid gap-8">
               {terms.map((term, index) => (
-                <div key={index} className="bg-gray-950 p-8 rounded-xl border border-white/5 space-y-4 hover:border-mask/30 transition-colors">
-                  <h2 className="text-xl font-bold text-white uppercase tracking-widest flex items-center gap-3">
+                <div key={index} className="bg-gray-50 p-8 rounded-xl border border-gray-200 space-y-4 hover:border-mask/30 transition-colors">
+                  <h2 className="text-xl font-bold text-black uppercase tracking-widest flex items-center gap-3">
                     <span className="text-mask font-serif text-2xl">0{index + 1}</span>
                     {term.title}
                   </h2>
-                  <p className="text-gray-400 leading-relaxed">{term.content}</p>
+                  <p className="text-gray-600 leading-relaxed">{term.content}</p>
                 </div>
               ))}
             </div>

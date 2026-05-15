@@ -29,37 +29,37 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
       <main className="flex-1">
         <div className="py-24 md:py-32">
           <div className="container mx-auto max-w-2xl">
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-mask text-center">Make a Reservation</h1>
-            <p className="mt-6 max-w-2xl mx-auto text-gray-300 text-center text-lg">
+            <p className="mt-6 max-w-2xl mx-auto text-gray-700 text-center text-lg">
               Fill out the form below to book your stay. We look forward to welcoming you.
             </p>
-            <Card className="mt-12 bg-gray-950 border-gray-800">
+            <Card className="mt-12 bg-gray-50 border-gray-200">
               <CardContent className="p-8">
                 {bookingStatus ? (
-                  <div className="text-center p-8 bg-green-900/50 border border-green-500 rounded-lg">
-                    <p className="text-lg text-white">{bookingStatus}</p>
+                  <div className="text-center p-8 bg-green-100 border border-green-500 rounded-lg">
+                    <p className="text-lg text-green-900">{bookingStatus}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleBookingSubmit} className="grid gap-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="grid gap-2">
-                        <Label htmlFor="name" className="text-gray-400">
+                        <Label htmlFor="name" className="text-gray-600">
                           Full Name
                         </Label>
                         <Input
                           id="name"
                           placeholder="John Doe"
                           required
-                          className="bg-black border-gray-700 text-white"
+                          className="bg-white border-gray-300 text-black"
                         />
                       </div>
                       <div className="grid gap-2">
-                        <Label htmlFor="email" className="text-gray-400">
+                        <Label htmlFor="email" className="text-gray-600">
                           Email
                         </Label>
                         <Input
@@ -67,13 +67,13 @@ export default function BookingPage() {
                           type="email"
                           placeholder="john.doe@example.com"
                           required
-                          className="bg-black border-gray-700 text-white"
+                          className="bg-white border-gray-300 text-black"
                         />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="grid gap-2">
-                        <Label htmlFor="phone" className="text-gray-400">
+                        <Label htmlFor="phone" className="text-gray-600">
                           Phone Number
                         </Label>
                         <Input
@@ -81,18 +81,18 @@ export default function BookingPage() {
                           type="tel"
                           placeholder="+1 (555) 123-4567"
                           required
-                          className="bg-black border-gray-700 text-white"
+                          className="bg-white border-gray-300 text-black"
                         />
                       </div>
                       <div className="grid gap-2">
-                        <Label htmlFor="room-type-booking" className="text-gray-400">
+                        <Label htmlFor="room-type-booking" className="text-gray-600">
                           Room Type
                         </Label>
                         <Select required>
-                          <SelectTrigger id="room-type-booking" className="bg-black border-gray-700 text-white">
+                          <SelectTrigger id="room-type-booking" className="bg-white border-gray-300 text-black">
                             <SelectValue placeholder="Select a room" />
                           </SelectTrigger>
-                          <SelectContent className="bg-gray-900 border-gray-700 text-white">
+                          <SelectContent className="bg-white border-gray-300 text-black">
                             <SelectItem value="deluxe-king">Deluxe King Room</SelectItem>
                             <SelectItem value="executive-suite">Executive Suite</SelectItem>
                             <SelectItem value="panoramic-penthouse">Panoramic Penthouse</SelectItem>
@@ -101,7 +101,7 @@ export default function BookingPage() {
                       </div>
                     </div>
                     <div className="grid gap-2">
-                      <Label htmlFor="booking-dates" className="text-gray-400">
+                      <Label htmlFor="booking-dates" className="text-gray-600">
                         Dates
                       </Label>
                       <Popover>
@@ -110,7 +110,7 @@ export default function BookingPage() {
                             id="booking-dates"
                             variant={"outline"}
                             className={cn(
-                              "w-full justify-start text-left font-normal bg-black border-gray-700 hover:bg-gray-900 text-white",
+                              "w-full justify-start text-left font-normal bg-white border-gray-300 hover:bg-gray-100 text-black",
                               !date && "text-muted-foreground",
                             )}
                           >
@@ -128,7 +128,7 @@ export default function BookingPage() {
                             )}
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0 bg-gray-900 border-gray-700" align="start">
+                        <PopoverContent className="w-auto p-0 bg-white border-gray-300" align="start">
                           <Calendar
                             initialFocus
                             mode="range"
