@@ -30,8 +30,8 @@ export function BookingForm() {
   }
 
   return (
-    <div className="bg-white text-black p-6 rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-4 items-end w-full max-w-5xl">
-      <div className="grid gap-1.5">
+    <div className="bg-white text-black p-4 md:p-6 rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-4 items-end w-full max-w-5xl mx-4">
+      <div className="grid gap-2">
         <Label htmlFor="check-in" className="text-sm font-medium text-gray-600 text-left">
           Check-In Date
         </Label>
@@ -41,20 +41,21 @@ export function BookingForm() {
               id="check-in"
               variant={"outline"}
               className={cn(
-                "w-full justify-start text-left font-normal border-gray-300",
+                "w-full justify-start text-left font-normal border-gray-300 h-12",
                 !date?.from && "text-muted-foreground",
               )}
             >
-              <CalendarIcon className="mr-2 h-4 w-4" />
+              <CalendarIcon className="mr-2 h-4 w-4 flex-shrink-0" />
               {date?.from ? format(date.from, "LLL dd, y") : <span>Select date</span>}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0 bg-white border-gray-200" align="start">
-            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} />
+            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={1} className="md:hidden" />
+            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} className="hidden md:block" />
           </PopoverContent>
         </Popover>
       </div>
-      <div className="grid gap-1.5">
+      <div className="grid gap-2">
         <Label htmlFor="check-out" className="text-sm font-medium text-gray-600 text-left">
           Check-Out Date
         </Label>
@@ -65,34 +66,35 @@ export function BookingForm() {
               variant={"outline"}
               disabled={!date?.from}
               className={cn(
-                "w-full justify-start text-left font-normal border-gray-300",
+                "w-full justify-start text-left font-normal border-gray-300 h-12",
                 !date?.to && "text-muted-foreground",
               )}
             >
-              <CalendarIcon className="mr-2 h-4 w-4" />
+              <CalendarIcon className="mr-2 h-4 w-4 flex-shrink-0" />
               {date?.to ? format(date.to, "LLL dd, y") : <span>Select date</span>}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0 bg-white border-gray-200" align="start">
-            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} />
+            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={1} className="md:hidden" />
+            <Calendar initialFocus mode="range" selected={date} onSelect={setDate} numberOfMonths={2} className="hidden md:block" />
           </PopoverContent>
         </Popover>
       </div>
-      <div className="grid gap-1.5">
+      <div className="grid gap-2">
         <Label className="text-sm font-medium text-gray-600 text-left">Guests</Label>
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
-              className="w-full justify-start text-left font-normal border-gray-300 bg-transparent"
+              className="w-full justify-start text-left font-normal border-gray-300 bg-transparent h-12"
             >
-              <User className="mr-2 h-4 w-4" />
-              <span>
+              <User className="mr-2 h-4 w-4 flex-shrink-0" />
+              <span className="truncate">
                 {guests.rooms} Room{guests.rooms > 1 ? "s" : ""}, {totalGuests} Guest{totalGuests > 1 ? "s" : ""}
               </span>
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-80 bg-white p-4">
+          <PopoverContent className="w-80 bg-white p-4" align="start">
             <div className="grid gap-4">
               <div className="flex items-center justify-between">
                 <Label htmlFor="rooms">Rooms</Label>
@@ -100,7 +102,7 @@ export function BookingForm() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("rooms", guests.rooms - 1)}
                   >
                     <Minus className="h-4 w-4" />
@@ -110,12 +112,12 @@ export function BookingForm() {
                     type="number"
                     value={guests.rooms}
                     onChange={(e) => handleGuestChange("rooms", Number.parseInt(e.target.value))}
-                    className="w-14 text-center"
+                    className="w-16 text-center"
                   />
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("rooms", guests.rooms + 1)}
                   >
                     <Plus className="h-4 w-4" />
@@ -128,7 +130,7 @@ export function BookingForm() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("adults", guests.adults - 1)}
                   >
                     <Minus className="h-4 w-4" />
@@ -138,12 +140,12 @@ export function BookingForm() {
                     type="number"
                     value={guests.adults}
                     onChange={(e) => handleGuestChange("adults", Number.parseInt(e.target.value))}
-                    className="w-14 text-center"
+                    className="w-16 text-center"
                   />
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("adults", guests.adults + 1)}
                   >
                     <Plus className="h-4 w-4" />
@@ -156,7 +158,7 @@ export function BookingForm() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("children", guests.children - 1)}
                   >
                     <Minus className="h-4 w-4" />
@@ -166,12 +168,12 @@ export function BookingForm() {
                     type="number"
                     value={guests.children}
                     onChange={(e) => handleGuestChange("children", Number.parseInt(e.target.value))}
-                    className="w-14 text-center"
+                    className="w-16 text-center"
                   />
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 bg-transparent"
+                    className="h-10 w-10 bg-transparent"
                     onClick={() => handleGuestChange("children", guests.children + 1)}
                   >
                     <Plus className="h-4 w-4" />
@@ -182,7 +184,7 @@ export function BookingForm() {
           </PopoverContent>
         </Popover>
       </div>
-      <Button onClick={handleBooking} size="lg" className="bg-gray-800 text-white hover:bg-gray-700 h-12">
+      <Button onClick={handleBooking} size="lg" className="bg-gray-800 text-white hover:bg-gray-700 h-12 font-bold">
         Book Now
       </Button>
     </div>

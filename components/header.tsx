@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Phone, Mail, Instagram, Facebook, Linkedin, MessageCircle } from "lucide-react"
@@ -11,6 +12,10 @@ import { cn } from "@/lib/utils"
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+
+  // Determine if current page should have dark or light header
+  const isDarkPage = pathname === "/" || pathname === "/booking"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,12 +39,27 @@ export function Header() {
     { name: "Contact Us", href: "/contact" },
   ]
 
+  // Determine text colors based on page and scroll state
+  const getTextColor = () => {
+    if (isDarkPage && !isScrolled) return "text-white"
+    if (isDarkPage && isScrolled) return "text-white"
+    return "text-gray-900" // Light pages or scrolled
+  }
+
+  const getBackgroundColor = () => {
+    if (isScrolled) {
+      return isDarkPage ? "bg-black/90" : "bg-white/95"
+    }
+    return isDarkPage ? "bg-transparent" : "bg-white/95"
+  }
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-black/90 backdrop-blur-md shadow-lg" : "bg-transparent"
+      getBackgroundColor(),
+      isScrolled ? "backdrop-blur-md shadow-lg" : ""
     )}>
-     
+
 
       {/* Main Navbar */}
       <div className={cn(
@@ -50,37 +70,50 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="relative w-12 h-12 lg:w-16 lg:h-16">
-              <Image 
-                src="/logo.png" 
-                alt="Panoramic Hotel Logo" 
-                fill 
+              <Image
+                src="/logo.png"
+                alt="Panoramic Hotel Logo"
+                fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-xl lg:text-2xl font-serif font-bold text-white tracking-tight">
+            <span className={cn(
+              "text-xl lg:text-2xl font-serif font-bold tracking-tight transition-colors",
+              getTextColor()
+            )}>
               Panoramic <span className="text-mask block lg:inline text-xs lg:text-sm font-sans font-light tracking-widest uppercase lg:ml-1">Hotel</span>
             </span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex gap-10 items-center">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                className="text-sm font-semibold uppercase tracking-widest text-gray-200 hover:text-mask transition-all duration-300 relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mask transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "text-sm font-semibold uppercase tracking-widest hover:text-mask transition-all duration-300 relative group",
+                    getTextColor(),
+                    isActive && "text-mask"
+                  )}
+                >
+                  {link.name}
+                  <span className={cn(
+                    "absolute -bottom-1 left-0 h-0.5 bg-mask transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  )}></span>
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Book Now Button */}
           <div className="hidden lg:block">
             <Link href="/booking">
-              <Button className="bg-mask text-black hover:brightness-125 font-bold transition-all duration-300 px-8 py-6 rounded-none uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <Button className="bg-mask text-black hover:brightness-125 font-bold transition-all duration-300 px-8 py-6 rounded-none uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(255,215,0,0.2)]">
                 Book Now
               </Button>
             </Link>
@@ -98,7 +131,10 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10"
+                  className={cn(
+                    "hover:bg-white/10 transition-colors",
+                    getTextColor()
+                  )}
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>

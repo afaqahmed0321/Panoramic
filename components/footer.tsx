@@ -96,19 +96,19 @@ export function Footer() {
           <div className="space-y-6">
             <h3 className="text-lg font-bold uppercase tracking-widest border-l-2 border-mask pl-4">Find Us</h3>
             <div className="w-full h-48 rounded-sm overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.0837597143894!2d74.32356!3d31.5627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b4000000001%3A0x7b6a4829d7d3d2a!2sPanoramic%20Hotel!5e0!3m2!1sen!2s!4v1700000000000" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.7454995843447!2d74.32131637627995!3d31.518076674262876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903ef4266a841%3A0xc0738c5eead30ba1!2sPanoramic%20Hotel!5e0!3m2!1sen!2s!4v1737212345678!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <a 
-              href="https://www.google.com/maps/search/?api=1&query=Panoramic%20Hotel%20Lahore%20Mall%20Road" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/k2LTPm5T4WV76iK27"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-mask hover:text-white transition-colors"
             >

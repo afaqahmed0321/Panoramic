@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { StickyBookButton } from "@/components/sticky-book-button"
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
       >
         {children}
         <WhatsAppButton />
+        <StickyBookButton />
       </body>
     </html>
   )
