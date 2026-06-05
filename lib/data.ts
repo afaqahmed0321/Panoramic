@@ -163,11 +163,9 @@ export const roomTypes = [
     price: "4500",
     priceNote: "+ tax",
     images: [
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.47 PM (1).jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.47 PM (2).jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.47 PM.jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.48 PM.jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.49 PM.jpeg"),
+      encodeURI("/SingleBedroom/1.jpeg"),
+      encodeURI("/SingleBedroom/2.jpeg"),
+      encodeURI("/SingleBedroom/3.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Single Bed" },
@@ -184,9 +182,10 @@ export const roomTypes = [
     price: "5000",
     priceNote: "+ tax",
     images: [
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.48 PM.jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.49 PM.jpeg"),
-      encodeURI("/SingleBedroom/WhatsApp Image 2025-08-12 at 2.52.47 PM (2).jpeg"),
+      encodeURI("/Double/WhatsApp Image 2026-05-19 at 23.17.52.jpeg"),
+      encodeURI("/Double/WhatsApp Image 2026-05-19 at 23.17.53.jpeg"),
+      encodeURI("/Double/WhatsApp Image 2026-05-19 at 23.17.54.jpeg"),
+      encodeURI("/Double/WhatsApp Image 2026-05-19 at 23.18.53.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Double Bed" },
@@ -203,8 +202,8 @@ export const roomTypes = [
     price: "5000",
     priceNote: "+ tax",
     images: [
-      encodeURI("/TwinRoom Singlebed/WhatsApp Image 2025-08-12 at 2.52.46 PM (1).jpeg"),
-      encodeURI("/TwinRoom Singlebed/WhatsApp Image 2025-08-12 at 2.52.46 PM.jpeg"),
+      encodeURI("/TwinRoom Singlebed/1.jpeg"),
+      encodeURI("/TwinRoom Singlebed/2.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Twin Single Beds" },
@@ -221,9 +220,8 @@ export const roomTypes = [
     price: "6000",
     priceNote: "+ tax",
     images: [
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.52 PM (1).jpeg"),
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.52 PM.jpeg"),
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.53 PM.jpeg"),
+      encodeURI("/Delux Twin/WhatsApp Image 2026-05-19 at 23.18.54.jpeg"),
+      encodeURI("/Delux Twin/WhatsApp Image 2026-05-19 at 23.18.56.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Twin Beds" },
@@ -260,9 +258,7 @@ export const roomTypes = [
     price: "6500",
     priceNote: "+ tax",
     images: [
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.54 PM (1).jpeg"),
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.54 PM.jpeg"),
-      encodeURI("/PrremiumRooms/WhatsApp Image 2025-08-12 at 2.52.53 PM.jpeg"),
+      encodeURI("/Delux Triple/WhatsApp Image 2026-05-19 at 23.19.39.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Three Beds" },
@@ -279,9 +275,11 @@ export const roomTypes = [
     price: "7500",
     priceNote: "+ tax",
     images: [
-      encodeURI("/ExecutiveRooms/WhatsApp Image 2025-08-12 at 2.52.43 PM.jpeg"),
-      encodeURI("/ExecutiveRooms/WhatsApp Image 2025-08-12 at 2.52.44 PM (1).jpeg"),
-      encodeURI("/ExecutiveRooms/WhatsApp Image 2025-08-12 at 2.52.44 PM.jpeg"),
+      encodeURI("/PrremiumRooms/1.jpeg"),
+      encodeURI("/PrremiumRooms/2.jpeg"),
+      encodeURI("/PrremiumRooms/3.jpeg"),
+      encodeURI("/PrremiumRooms/4.jpeg"),
+      encodeURI("/PrremiumRooms/5.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "Four Beds" },
@@ -298,9 +296,9 @@ export const roomTypes = [
     price: "7000",
     priceNote: "+ tax",
     images: [
-      encodeURI("/Appartment/WhatsApp Image 2025-08-12 at 2.52.44 PM (2).jpeg"),
-      encodeURI("/Appartment/WhatsApp Image 2025-08-12 at 2.52.45 PM.jpeg"),
-      encodeURI("/Appartment/WhatsApp Image 2025-08-12 at 2.52.49 PM.jpeg"),
+      encodeURI("/Appartment/1.jpeg"),
+      encodeURI("/Appartment/2.jpeg"),
+      encodeURI("/Appartment/3.jpeg"),
     ],
     amenities: [
       { icon: BedDouble, text: "King-sized Bed" },

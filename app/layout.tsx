@@ -64,7 +64,7 @@ export default function RootLayout({
       >
         {children}
         <WhatsAppButton />
-        <StickyBookButton />
+        {/* <StickyBookButton /> */}
       </body>
     </html>
   )
