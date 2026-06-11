@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.panoramichotel.co/about",
   },
 }
-
+<meta name="robots" content="index, follow">
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
