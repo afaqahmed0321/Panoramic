@@ -6,6 +6,7 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
+      <meta name="robots" content="index, follow">
       <main className="flex-1">
         <div className="py-24 md:py-32">
           <div className="container mx-auto text-center">
