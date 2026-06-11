@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://www.panoramichotel.co/privacy-policy",
   },
 }
-
+<meta name="robots" content="index, follow">
 export default function PrivacyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
