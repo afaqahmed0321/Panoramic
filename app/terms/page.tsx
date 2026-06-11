@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms and Conditions | Panoramic Hotel Lahore Pakistan",
   description: "Read the terms and conditions of Panoramic Hotel Lahore, Pakistan to understand booking policies, usage terms, payments, and guest responsibilities.",
 }
-
+<meta name="robots" content="index, follow">
 export default function TermsPage() {
   const terms = [
     {
