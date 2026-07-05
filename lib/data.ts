@@ -313,7 +313,7 @@ export const roomTypes = [
     slug: "interconnecting-room",
     description:
       "Two connected rooms perfect for large families or groups, offering privacy and convenience with shared access.",
-    price: "9000",
+    price: "12000",
     priceNote: "+ tax",
     images: [
       encodeURI("/ExecutiveRooms/WhatsApp Image 2025-08-12 at 2.52.43 PM.jpeg"),
