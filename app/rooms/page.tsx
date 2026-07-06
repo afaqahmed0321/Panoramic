@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: "https://www.panoramichotel.co/",
   },
 };
-<meta name="robots" content="index, follow">
+
 export default function RoomsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black">

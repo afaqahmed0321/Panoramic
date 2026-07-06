@@ -27,7 +27,7 @@ export default function BookingPage() {
     setBookingStatus("Thank you for your booking! We will contact you shortly to confirm the details.")
     setTimeout(() => setBookingStatus(null), 5000)
   }
-<meta name="robots" content="index, follow">
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
