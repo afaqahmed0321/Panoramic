@@ -160,7 +160,7 @@ export const roomTypes = [
     slug: "standard-single-room",
     description:
       "Cozy single room designed for solo travelers seeking comfort and value.",
-    price: "4500",
+    price: "5000",
     priceNote: "+ tax",
     images: [
       encodeURI("/SingleBedroom/1.jpeg"),
@@ -179,7 +179,7 @@ export const roomTypes = [
     slug: "standard-double-room",
     description:
       "Comfortable double room with a spacious bed, perfect for couples or solo travelers seeking extra space.",
-    price: "5000",
+    price: "6000",
     priceNote: "+ tax",
     images: [
       encodeURI("/Double/WhatsApp Image 2026-05-19 at 23.17.52.jpeg"),
@@ -199,7 +199,7 @@ export const roomTypes = [
     slug: "standard-twin-room",
     description:
       "Comfortable twin room featuring two single beds, ideal for friends or colleagues traveling together.",
-    price: "5000",
+    price: "6000",
     priceNote: "+ tax",
     images: [
       encodeURI("/TwinRoom Singlebed/1.jpeg"),
@@ -217,7 +217,7 @@ export const roomTypes = [
     slug: "deluxe-twin-room",
     description:
       "Spacious deluxe twin room with two comfortable beds, elegant decor, and premium amenities.",
-    price: "6000",
+    price: "8000",
     priceNote: "+ tax",
     images: [
       encodeURI("/Delux Twin/WhatsApp Image 2026-05-19 at 23.18.54.jpeg"),
@@ -255,7 +255,7 @@ export const roomTypes = [
     slug: "deluxe-triple-room",
     description:
       "Spacious triple room perfect for small families or groups, featuring three comfortable beds and modern amenities.",
-    price: "6500",
+    price: "8500",
     priceNote: "+ tax",
     images: [
       encodeURI("/Delux Triple/WhatsApp Image 2026-05-19 at 23.19.39.jpeg"),
@@ -272,7 +272,7 @@ export const roomTypes = [
     slug: "deluxe-quad-room",
     description:
       "Extra spacious quad room ideal for families or groups of four, with four beds and enhanced amenities.",
-    price: "7500",
+    price: "9000",
     priceNote: "+ tax",
     images: [
       encodeURI("/PrremiumRooms/1.jpeg"),
