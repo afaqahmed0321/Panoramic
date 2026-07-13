@@ -235,7 +235,7 @@ export const roomTypes = [
     slug: "deluxe-double-room",
     description:
       "Elegant deluxe room with a double bed, refined finishes, and premium amenities for a luxurious stay.",
-    price: "6000",
+    price: "8000",
     priceNote: "+ tax",
     images: [
       encodeURI("/DeluxKingRooms/WhatsApp Image 2025-08-12 at 2.52.42 PM.jpeg"),
@@ -293,7 +293,7 @@ export const roomTypes = [
     slug: "one-bed-suite",
     description:
       "Luxurious suite with separate living area, offering enhanced space and comfort for a premium experience.",
-    price: "7000",
+    price: "9000",
     priceNote: "+ tax",
     images: [
       encodeURI("/Appartment/1.jpeg"),

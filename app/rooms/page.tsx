@@ -53,9 +53,6 @@ export default function RoomsPage() {
                 Each room is designed with your comfort in mind, featuring elegant decor and modern amenities. Find the
                 perfect space for your stay in the heart of Lahore.
               </p>
-              <div className="mt-6 inline-block bg-mask/10 border border-mask/20 rounded-full px-6 py-3">
-                <p className="text-mask font-bold">Starting from RS 4,500/night + tax</p>
-              </div>
             </div>
           </div>
         </div>

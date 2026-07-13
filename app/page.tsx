@@ -30,7 +30,8 @@ export default function HomePage() {
                 Where luxury meets the horizon
               </h1>
               <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed font-light px-4">
-                Experience a luxury hotel stay designed for comfort, elegance, and unforgettable views. Panoramic Hotel offers premium rooms, world-class amenities, and breathtaking city skyline views, making it the perfect choice for business travelers, couples, and family vacations.
+                Welcome to Panoramic Hotel – Your Trusted Family Hotel in the Heart of Lahore.
+                Experience a comfortable and welcoming stay on Mall Road, Lahore. Panoramic Hotel offers clean, spacious rooms, warm hospitality, complimentary Wi-Fi, delicious breakfast, and convenient access to Lahore's major attractions and business districts. Whether you're traveling with your family or on a business trip, we are committed to making your stay comfortable, secure, and memorable.
               </p>
             </div>
             <BookingForm />
@@ -53,9 +54,6 @@ export default function HomePage() {
               <p className="text-gray-400 text-lg">
                 Choose from our diverse selection of elegantly designed rooms and suites, each crafted to provide maximum comfort and luxury
               </p>
-              <div className="mt-6 inline-block bg-mask/10 border border-mask/20 rounded-full px-6 py-2">
-                <p className="text-mask font-bold">Starting from RS 4,500/night</p>
-              </div>
             </div>
 
             {/* Room Cards Grid */}
