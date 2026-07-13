@@ -78,12 +78,15 @@ export function Header() {
                 priority
               />
             </div>
-            <span className={cn(
-              "text-xl lg:text-2xl font-serif font-bold tracking-tight transition-colors",
-              getTextColor()
-            )}>
-              Panoramic <span className="text-mask block lg:inline text-xs lg:text-sm font-sans font-light tracking-widest uppercase lg:ml-1">Hotel</span>
-            </span>
+            <div className="flex-col flex">
+              <span className={cn(
+                "text-xl lg:text-2xl font-serif font-bold tracking-tight transition-colors",
+                getTextColor()
+              )}>
+                Panoramic <span className="text-mask block lg:inline text-xs lg:text-sm font-sans font-light tracking-widest uppercase lg:ml-1">Hotel</span>
+              </span>
+              <span className="text-mask block lg:inline text-xs lg:text-sm font-sans font-light tracking-widest uppercase lg:ml-1">+923218777749</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -121,7 +124,7 @@ export function Header() {
 
           {/* Mobile Menu Trigger */}
           <div className="flex items-center gap-4 lg:hidden">
-             <Link href="/booking">
+            <Link href="/booking">
               <Button size="sm" className="bg-mask text-black font-bold h-9 px-4 text-xs uppercase rounded-none">
                 Book
               </Button>
@@ -144,9 +147,9 @@ export function Header() {
                 <div className="flex flex-col h-full pt-20 px-8">
                   <div className="flex flex-col space-y-8">
                     {navLinks.map((link) => (
-                      <Link 
+                      <Link
                         key={link.name}
-                        href={link.href} 
+                        href={link.href}
                         className="text-2xl font-serif text-white hover:text-mask transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
@@ -154,7 +157,7 @@ export function Header() {
                       </Link>
                     ))}
                   </div>
-                  
+
                   <div className="mt-auto pb-12 space-y-8">
                     <div className="pt-8 border-t border-white/10">
                       <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Contact Us</p>
@@ -167,12 +170,12 @@ export function Header() {
                         <span className="text-sm">info@panoramichotel.co</span>
                       </a>
                     </div>
-                    
+
                     <div className="flex items-center gap-6">
                       {socialLinks.map((social, index) => (
-                        <a 
-                          key={index} 
-                          href={social.href} 
+                        <a
+                          key={index}
+                          href={social.href}
                           className="text-gray-400 hover:text-mask transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
