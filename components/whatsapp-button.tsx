@@ -3,7 +3,7 @@
 import Image from "next/image"
 
 export function WhatsAppButton() {
-  const phoneNumber = "+923218473750"
+  const phoneNumber = "+923218777749"
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}`
 
   return (
