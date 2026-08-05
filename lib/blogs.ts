@@ -1,4 +1,4 @@
-import { noStore } from "next/cache"
+import { unstable_noStore as noStore } from "next/cache"
 import { Pool } from "pg"
 
 export type BlogPost = {
