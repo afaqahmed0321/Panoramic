@@ -13,7 +13,8 @@ export function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Rooms & Suites", href: "/rooms" },
-    { name: "Facilities", href: "/facilities" },
+    { name: "Services", href: "/services" },
+    { name: "Blogs", href: "/blogs" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact" },
   ]
