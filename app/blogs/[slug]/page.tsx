@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { BlogContent } from "@/components/blog-content"
 import { getBlogBySlug } from "@/lib/blogs"
+import { getFallbackBlogBySlug } from "@/lib/fallback-blogs"
 import { CalendarDays, UserRound } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -16,7 +17,13 @@ type BlogDetailProps = {
 
 export async function generateMetadata({ params }: BlogDetailProps): Promise<Metadata> {
   const { slug } = await params
-  const blog = await getBlogBySlug(slug)
+  let blog = getFallbackBlogBySlug(slug)
+
+  try {
+    blog = (await getBlogBySlug(slug)) || blog
+  } catch (error) {
+    console.error("Unable to load blog metadata from database", error)
+  }
 
   if (!blog) {
     return {
@@ -39,7 +46,13 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
 
 export default async function BlogDetailPage({ params }: BlogDetailProps) {
   const { slug } = await params
-  const blog = await getBlogBySlug(slug)
+  let blog = getFallbackBlogBySlug(slug)
+
+  try {
+    blog = (await getBlogBySlug(slug)) || blog
+  } catch (error) {
+    console.error("Unable to load blog from database", error)
+  }
 
   if (!blog) {
     notFound()

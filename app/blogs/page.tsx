@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { getBlogs } from "@/lib/blogs"
+import { fallbackBlogs } from "@/lib/fallback-blogs"
 import { CalendarDays, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
@@ -18,7 +19,14 @@ export const metadata: Metadata = {
 }
 
 export default async function BlogsPage() {
-  const blogs = await getBlogs()
+  let blogs = fallbackBlogs
+
+  try {
+    const databaseBlogs = await getBlogs()
+    blogs = databaseBlogs.length > 0 ? databaseBlogs : fallbackBlogs
+  } catch (error) {
+    console.error("Unable to load blogs from database", error)
+  }
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
