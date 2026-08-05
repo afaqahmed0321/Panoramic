@@ -19,10 +19,50 @@ export function BlogForm() {
 
   return (
     <form ref={formRef} action={formAction} className="space-y-5">
+      <div className="border border-white/10 bg-black/30 p-5">
+        <h2 className="mb-5 text-lg font-serif font-bold text-white">SEO Details</h2>
+        <div className="space-y-5">
+          <div className="space-y-2">
+            <Label htmlFor="metaTitle" className="text-white">
+              Meta Title
+            </Label>
+            <Input
+              id="metaTitle"
+              name="metaTitle"
+              placeholder="Best Hotel Near Mall Road Lahore for Families | Comfortable Family Stay"
+              className="border-white/10 bg-white/5 text-white"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="metaDescription" className="text-white">
+              Meta Description
+            </Label>
+            <Textarea
+              id="metaDescription"
+              name="metaDescription"
+              rows={3}
+              placeholder="Looking for the Best Hotel Near Mall Road Lahore for Families? Enjoy comfortable rooms, free Wi-Fi, secure parking..."
+              className="border-white/10 bg-white/5 text-white"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="metaKeywords" className="text-white">
+              Meta Keywords
+            </Label>
+            <Textarea
+              id="metaKeywords"
+              name="metaKeywords"
+              rows={3}
+              placeholder="Best Hotel Near Mall Road Lahore for Families, Family Hotel Near Mall Road Lahore, Hotel with Free Parking Lahore"
+              className="border-white/10 bg-white/5 text-white"
+            />
+          </div>
+        </div>
+      </div>
       <div className="grid gap-5 md:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="title" className="text-white">
-            Blog Title
+            Blog H1 Title
           </Label>
           <Input id="title" name="title" required className="border-white/10 bg-white/5 text-white" />
         </div>
@@ -43,7 +83,14 @@ export function BlogForm() {
         <Label htmlFor="content" className="text-white">
           Blog Content
         </Label>
-        <Textarea id="content" name="content" required rows={12} className="border-white/10 bg-white/5 text-white" />
+        <Textarea
+          id="content"
+          name="content"
+          required
+          rows={18}
+          placeholder={"Paragraph text\n\n## Why Families Prefer Staying Near Mall Road Lahore\nParagraph text\n\n- Lahore Museum\n- Lahore Zoo\n- Anarkali Bazaar\n\n### Spacious Family Rooms\nParagraph text"}
+          className="border-white/10 bg-white/5 text-white"
+        />
       </div>
       {state?.error ? <p className="text-sm text-red-300">{state.error}</p> : null}
       {state?.success ? <p className="text-sm text-green-300">{state.success}</p> : null}

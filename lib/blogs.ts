@@ -5,6 +5,9 @@ export type BlogPost = {
   id: number
   title: string
   slug: string
+  metaTitle: string
+  metaDescription: string
+  metaKeywords: string
   excerpt: string
   content: string
   author: string
@@ -37,11 +40,18 @@ async function ensureBlogTable() {
           id SERIAL PRIMARY KEY,
           title TEXT NOT NULL,
           slug TEXT NOT NULL UNIQUE,
+          meta_title TEXT NOT NULL DEFAULT '',
+          meta_description TEXT NOT NULL DEFAULT '',
+          meta_keywords TEXT NOT NULL DEFAULT '',
           excerpt TEXT NOT NULL,
           content TEXT NOT NULL,
           author TEXT NOT NULL DEFAULT 'Panoramic Hotel',
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         );
+
+        ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_title TEXT NOT NULL DEFAULT '';
+        ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_description TEXT NOT NULL DEFAULT '';
+        ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_keywords TEXT NOT NULL DEFAULT '';
       `)
       .then(() => undefined)
   }
@@ -65,6 +75,9 @@ function mapBlog(row: any): BlogPost {
     id: row.id,
     title: row.title,
     slug: row.slug,
+    metaTitle: row.meta_title || "",
+    metaDescription: row.meta_description || "",
+    metaKeywords: row.meta_keywords || "",
     excerpt: row.excerpt,
     content: row.content,
     author: row.author,
@@ -77,7 +90,7 @@ export async function getBlogs() {
   await ensureBlogTable()
 
   const result = await getPool().query(
-    "SELECT id, title, slug, excerpt, content, author, created_at FROM blogs ORDER BY created_at DESC"
+    "SELECT id, title, slug, meta_title, meta_description, meta_keywords, excerpt, content, author, created_at FROM blogs ORDER BY created_at DESC"
   )
 
   return result.rows.map(mapBlog)
@@ -88,7 +101,7 @@ export async function getBlogBySlug(slug: string) {
   await ensureBlogTable()
 
   const result = await getPool().query(
-    "SELECT id, title, slug, excerpt, content, author, created_at FROM blogs WHERE slug = $1 LIMIT 1",
+    "SELECT id, title, slug, meta_title, meta_description, meta_keywords, excerpt, content, author, created_at FROM blogs WHERE slug = $1 LIMIT 1",
     [slug]
   )
 
@@ -97,6 +110,9 @@ export async function getBlogBySlug(slug: string) {
 
 export async function createBlogPost(input: {
   title: string
+  metaTitle?: string
+  metaDescription?: string
+  metaKeywords?: string
   excerpt: string
   content: string
   author?: string
@@ -104,6 +120,9 @@ export async function createBlogPost(input: {
   await ensureBlogTable()
 
   const title = input.title.trim()
+  const metaTitle = input.metaTitle?.trim() || title
+  const metaDescription = input.metaDescription?.trim() || input.excerpt.trim()
+  const metaKeywords = input.metaKeywords?.trim() || ""
   const excerpt = input.excerpt.trim()
   const content = input.content.trim()
   const author = input.author?.trim() || "Panoramic Hotel"
@@ -124,10 +143,10 @@ export async function createBlogPost(input: {
   }
 
   const result = await getPool().query(
-    `INSERT INTO blogs (title, slug, excerpt, content, author)
-     VALUES ($1, $2, $3, $4, $5)
-     RETURNING id, title, slug, excerpt, content, author, created_at`,
-    [title, slug, excerpt, content, author]
+    `INSERT INTO blogs (title, slug, meta_title, meta_description, meta_keywords, excerpt, content, author)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+     RETURNING id, title, slug, meta_title, meta_description, meta_keywords, excerpt, content, author, created_at`,
+    [title, slug, metaTitle, metaDescription, metaKeywords, excerpt, content, author]
   )
 
   return mapBlog(result.rows[0])

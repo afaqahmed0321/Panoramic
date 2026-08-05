@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { BlogContent } from "@/components/blog-content"
 import { getBlogBySlug } from "@/lib/blogs"
 import { CalendarDays, UserRound } from "lucide-react"
 import Link from "next/link"
@@ -24,8 +25,11 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
   }
 
   return {
-    title: `${blog.title} | Panoramic Hotel Lahore`,
-    description: blog.excerpt,
+    title: blog.metaTitle || `${blog.title} | Panoramic Hotel Lahore`,
+    description: blog.metaDescription || blog.excerpt,
+    keywords: blog.metaKeywords
+      ? blog.metaKeywords.split(",").map((keyword) => keyword.trim()).filter(Boolean)
+      : undefined,
     alternates: {
       canonical: `https://www.panoramichotel.co/blogs/${blog.slug}`,
     },
@@ -40,8 +44,6 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
   if (!blog) {
     notFound()
   }
-
-  const paragraphs = blog.content.split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean)
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
@@ -76,11 +78,7 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
 
           <section className="bg-black py-14 md:py-20">
             <div className="container mx-auto px-4">
-              <div className="mx-auto max-w-3xl space-y-6 text-lg leading-8 text-gray-300">
-                {paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
+              <BlogContent content={blog.content} />
               <div className="mx-auto mt-12 max-w-3xl">
                 <Link href="/blogs">
                   <Button variant="outline" className="border-mask bg-black text-mask hover:bg-mask hover:text-black">

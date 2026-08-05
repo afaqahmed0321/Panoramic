@@ -30,6 +30,9 @@ export async function publishBlog(_: { error?: string; success?: string } | unde
   try {
     const post = await createBlogPost({
       title: String(formData.get("title") || ""),
+      metaTitle: String(formData.get("metaTitle") || ""),
+      metaDescription: String(formData.get("metaDescription") || ""),
+      metaKeywords: String(formData.get("metaKeywords") || ""),
       excerpt: String(formData.get("excerpt") || ""),
       content: String(formData.get("content") || ""),
       author: String(formData.get("author") || ""),
