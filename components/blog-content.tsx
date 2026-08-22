@@ -4,6 +4,58 @@ function getHeadingLevel(line: string) {
   return 0
 }
 
+function parseFormattedText(text: string): React.ReactNode {
+  const regex = /(\[[^\]]+\]\([^)]+\)|https?:\/\/[^\s<]+|\*\*[^*]+\*\*)/g
+  const parts = text.split(regex)
+
+  return parts.map((part, index) => {
+    if (!part) return null
+
+    if (part.startsWith("[") && part.includes("](")) {
+      const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+      if (match) {
+        const [, linkText, href] = match
+        const isExternal = href.startsWith("http://") || href.startsWith("https://")
+        return (
+          <a
+            key={index}
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            className="text-mask underline font-medium hover:brightness-125 transition-all"
+          >
+            {linkText}
+          </a>
+        )
+      }
+    }
+
+    if (part.startsWith("http://") || part.startsWith("https://")) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-mask underline font-medium hover:brightness-125 transition-all"
+        >
+          {part}
+        </a>
+      )
+    }
+
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      )
+    }
+
+    return part
+  })
+}
+
 export function BlogContent({ content }: { content: string }) {
   const blocks: React.ReactNode[] = []
   const lines = content.split(/\r?\n/)
@@ -15,7 +67,7 @@ export function BlogContent({ content }: { content: string }) {
     blocks.push(
       <ul key={`list-${blocks.length}`} className="my-6 list-disc space-y-2 pl-6 text-gray-300">
         {listItems.map((item, index) => (
-          <li key={`${item}-${index}`}>{item}</li>
+          <li key={`${item}-${index}`}>{parseFormattedText(item)}</li>
         ))}
       </ul>
     )
@@ -42,7 +94,7 @@ export function BlogContent({ content }: { content: string }) {
     if (headingLevel === 2) {
       blocks.push(
         <h2 key={`h2-${blocks.length}`} className="mt-12 text-3xl font-serif font-bold text-white">
-          {line.slice(3).trim()}
+          {parseFormattedText(line.slice(3).trim())}
         </h2>
       )
       return
@@ -51,7 +103,7 @@ export function BlogContent({ content }: { content: string }) {
     if (headingLevel === 3) {
       blocks.push(
         <h3 key={`h3-${blocks.length}`} className="mt-8 text-2xl font-serif font-bold text-mask">
-          {line.slice(4).trim()}
+          {parseFormattedText(line.slice(4).trim())}
         </h3>
       )
       return
@@ -59,7 +111,7 @@ export function BlogContent({ content }: { content: string }) {
 
     blocks.push(
       <p key={`p-${blocks.length}`} className="text-lg leading-8 text-gray-300">
-        {line}
+        {parseFormattedText(line)}
       </p>
     )
   })
